@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Twitter stream</title>
+</head>
+<body>
+
+<div id="tweetd"></div>
+
+   
+   
+   <script src="/socket.io/socket.io.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+  <script>
+    $(document).ready(function() { 
+        var socket = io.connect('http://localhost:8080');
+        socket.on('stream', function(tweet){
+        $('#tweetd').append(tweet+'<br>');
+        });
+        
+     }); 
+        
+  </script>
+  
+  </body>
+</div>
