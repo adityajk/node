@@ -40,11 +40,10 @@
 					<h1>Node.js</h1>
 					<p>Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications.</p>
 					<p>
-						<small>Created by <a target="_blank" href="https://twitter.com/adi_k_5">Aditya Khajuria</a></small>
-					</p>
-					<p>
-						<small>Web address <a target="_blank" href="http://nodejs.org">Nodejs</a></small>
-					</p>
+						<small>Find Me at Twitter : <a target="_blank" href="https://twitter.com/adi_k_5">Aditya Khajuria</a></small><br>
+						<small>Find Code at GitHub: <a target="_blank" href="https://github.com/adityajk/node">Node.js examples</a></small><br>
+						<small>Website address <a target="_blank" href="http://nodejs.org">Nodejs</a></small>
+					</p>					
 				</section>
 
 				<section>
@@ -166,22 +165,34 @@ execute(function(word){ console.log(word) }, "Hello");
 				<section>
 					<h2>Event-driven asynchronous callbacks</h2>
 					<p>
-					    
+					    Why Node.js applications have to be written this way ? <br>
+					    PHP Code to access the file
 					</p>
+					<pre><code data-trim contenteditable style="font-size: 23px; margin-top: 20px;">
+					&lt?php
+echo "Starting\n";
+$contents = file_get_contents("./file/sample.txt");
+echo "\nContent of file: " . $contents . "\n";
+echo "Finished\n";
+?>
+					</code></pre>
+					<p>
+					    Node.js code to access the file
+					</p>
+					<pre><code data-trim contenteditable style="font-size: 23px; margin-top: 20px;">
+					var fs = require("fs");
+console.log("Starting");
+fs.readFile("./file/sample.txt", function(error, data) {
+    console.log("Contents : " + data);
+});
+console.log("Carry on executing");    
+					</code></pre>
 				</section>
 
-				<section id="transitions">
-					<h2>Transition Styles</h2>
+				<section>
+					<h2>Event Loop</h2>
 					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
+						<img width="320" height="299" src="./img/event_loop.jpg" alt="Event Loop">
 					</p>
 				</section>
 
